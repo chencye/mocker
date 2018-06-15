@@ -3,3 +3,6 @@ jdk:
   - oraclejdk8
 os:
   - linux
+
+after_success:
+  - mvn clean cobertura:cobertura coveralls:report
