@@ -1,9 +1,19 @@
 spring:
+  profiles:
+    active: dev
   datasource:
-    schema: classpath:db/schema.sql
-    data: classpath:db/data.sql
-    url: jdbc:h2:file:~/.h2/testdb
+    schema: classpath*:META-INF/db/schema/*.sql
+    data: classpath*:META-INF/db/data/*.sql
+    url: jdbc:h2:mem:mocker
     name: root
     password: root
   jpa:
     show-sql: true
+    hibernate:
+      ddl-auto: none
+
+logging:
+  level:
+    root: info
+    org.springframework: warn
+    org.apache: warn

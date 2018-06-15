@@ -8,4 +8,5 @@ public class MockerApplication {
     public static void main(String[] args) {
         SpringApplication.run(MockerApplication.class, args);
     }
+
 }
